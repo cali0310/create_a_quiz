@@ -20,7 +20,7 @@ def loading_animation(message, duration=1.5):
     for _ in range(int(duration * 10)):
         for char in chars:
             print(f"\r{Fore.YELLOW}{message} {char}", end="", flush=True)
-            time.sleep(0.1)
+            time.sleep(0.01)
     print()
 
 def get_input(prompt, color=Fore.GREEN):
