@@ -40,4 +40,20 @@ def create_question():
     print(Fore.YELLOW + "\n--- Enter the four answer choices ---" + Style.RESET_ALL)
     choices = {}
     options = ['a', 'b', 'c', 'd']
-    
+
+    for option in options:
+        choices[option] = get_input(f"Option {option.upper()}: ")
+
+    # Loop until a valid correct answer is entered
+    while True:
+        correct_answer = get_input("\n" + emoji.emojize(":white_check_mark: Enter the correct answer (a/b/c/d): "), Fore.MAGENTA).lower()
+        if correct_answer in options:
+            break
+        print(Fore.RED + "Invalid option! Please enter a, b, c, or d." + Style.RESET_ALL)
+
+    # Return the constructed question data
+    return {
+        "question": question,
+        "choices": choices,
+        "correct_answer": correct_answer
+    }
