@@ -57,3 +57,13 @@ def create_question():
         "choices": choices,
         "correct_answer": correct_answer
     }
+# save questions to a file in JSON format
+def load_saved_quiz_questions(file_name="quiz_questions.txt"):
+    try:
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as input_file:
+                return json.load(input_file)
+        return []  # Return an empty list if file doesn't exist
+    except Exception as error_message:
+        print(Fore.RED + f"Error loading quiz questions: {error_message}" + Style.RESET_ALL)
+        return []
