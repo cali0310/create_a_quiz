@@ -78,3 +78,52 @@ def load_saved_quiz_questions(file_name="quiz_questions.txt"):
     except Exception as error_message:
         print(Fore.RED + f"Error loading quiz questions: {error_message}" + Style.RESET_ALL)
         return []
+
+# main program loop
+def main():
+    file_name = "quiz_questions.txt"
+    questions = load_saved_quiz_questions(file_name)
+    
+    while True:
+        display_header()
+
+        # show current question count
+        print(f"\n{Fore.CYAN}" + emoji.emojize(":bar_chart:") + f" Current question count: {Fore.WHITE}{len(questions)}")
+        print(Fore.YELLOW + "═" * 50 + Style.RESET_ALL)
+
+        # print main menu options
+        print(f"\n{Fore.GREEN}1.{Style.RESET_ALL} Add a new question")
+        print(f"{Fore.RED}2.{Style.RESET_ALL} Exit")
+
+        # ask for user's choices
+        choice = get_input("\n" + emoji.emojize(":backhand_index_pointing_right: Choose an option (1-2): "))
+
+
+        if choice == '1':
+            new_question = create_question()
+            questions.append(new_question)
+            loading_animation("Saving question...")
+
+            # saving updated question list to file
+            if save_quiz_questions_to_file(questions, file_name):
+                print(Fore.GREEN + "\n" + emoji.emojize(":check_mark_button: Question saved successfully!") + Style.RESET_ALL)
+            else:
+                print(Fore.RED + "\n" + emoji.emojize(":cross_mark: Failed to save question.") + Style.RESET_ALL)
+
+
+            # pause before returning to menu
+            input(Fore.YELLOW + "\nPress Enter to continue..." + Style.RESET_ALL)
+
+        elif choice == '2':
+            # exit screen message
+            display_header()
+            print(Fore.CYAN + "\nThank you for using the Quiz Creator!")
+            print(f"Your questions are saved in {file_name}")
+            print(Fore.YELLOW + "\n" + emoji.emojize("Exiting program... :right_arrow:") + Style.RESET_ALL)
+            time.sleep(1.5)
+            break
+
+        else:
+            # invalid menu selection
+            print(Fore.RED + "\nInvalid choice! Please select 1 or 2." + Style.RESET_ALL)
+            time.sleep(1.5)
