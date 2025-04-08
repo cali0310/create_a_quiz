@@ -7,3 +7,6 @@ import emoji
 
 # Initialize colorama to auto-reset color styles after each print
 init(autoreset=True)
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
