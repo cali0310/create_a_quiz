@@ -127,3 +127,10 @@ def main():
             # invalid menu selection
             print(Fore.RED + "\nInvalid choice! Please select 1 or 2." + Style.RESET_ALL)
             time.sleep(1.5)
+
+# running the program
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print(Fore.RED + "\n\nProgram interrupted. Exiting..." + Style.RESET_ALL)
