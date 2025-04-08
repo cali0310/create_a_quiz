@@ -25,3 +25,19 @@ def loading_animation(message, duration=1.5):
 
 def get_input(prompt, color=Fore.GREEN):
     return input(f"{color}{prompt}{Style.RESET_ALL}")
+
+def create_question():
+    display_header()
+    
+    # section header
+    print(Fore.GREEN + "\n" + emoji.emojize(":pencil:  CREATE NEW QUESTION") + Style.RESET_ALL)
+    print(Fore.YELLOW + "═" * 50 + Style.RESET_ALL)
+
+    # get the question from the user
+    question = get_input("\n" + emoji.emojize(":memo: Enter your question: "), Fore.CYAN)
+
+    # four answer choices
+    print(Fore.YELLOW + "\n--- Enter the four answer choices ---" + Style.RESET_ALL)
+    choices = {}
+    options = ['a', 'b', 'c', 'd']
+    
