@@ -22,3 +22,6 @@ def loading_animation(message, duration=1.5):
             print(f"\r{Fore.YELLOW}{message} {char}", end="", flush=True)
             time.sleep(0.1)
     print()
+
+def get_input(prompt, color=Fore.GREEN):
+    return input(f"{color}{prompt}{Style.RESET_ALL}")
