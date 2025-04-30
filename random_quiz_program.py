@@ -18,6 +18,14 @@ class quiz_app:
         self.master.geometry("500x450")
         self.master.resizable(False, False)
 
+        self.bg_color = "#F5ECD5"       # Light beige
+        self.text_color = "#333333"     # Dark text
+        self.button_color = "#626F47"   # Soft green
+        self.button_hover = "#90B8AD"
+        self.radio_bg = "#F5ECD5"
+        self.radio_select = "#D6CDBB"
+
+        self.master.configure(bg=self.bg_color)
         #load and shuffling questions
         self.questions = load_questions()
         if not self.questions:
