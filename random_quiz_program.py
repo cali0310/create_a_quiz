@@ -11,7 +11,7 @@ def load_questions(file_name="quiz_questions.txt"):
     return []
 
 # GUI for quiz
-class quiz_app:
+class QuizApp:
     def __init__(self, master):
         self.master = master
         self.master.title("General Knowledge Quiz")
@@ -46,7 +46,7 @@ class quiz_app:
 
     def create_widgets(self):
         self.title_label = tk.Label(
-            self.master, text="General Knowledge Quiz", font=("Helvectica", 20, "bold"), fg=self.text_color,
+            self.master, text="General Knowledge Quiz", font=("Helvetica", 20, "bold"), fg=self.text_color,
             bg=self.bg_color
         )   
         self.title_label.pack(pady=(10, 5))
@@ -119,5 +119,5 @@ class quiz_app:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = quiz_app(root)
+    app = QuizApp(root)
     root.mainloop()
