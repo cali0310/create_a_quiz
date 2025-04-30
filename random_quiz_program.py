@@ -59,7 +59,13 @@ class quiz_app:
         if self.current_index >= len(self.questions):
             self.end_quiz()
             return
-        
+        q = self.questions[self.current_index]
+        self.question_var.set(f"Q{self.current_index + 1}: {q['question']}")
+        self.selected_option.set("")  # Clear previous selection
+
+        for opt in ['a', 'b', 'c', 'd']:
+            self.option_buttons[opt].config(text=f"{opt.upper()}. {q['choices'][opt]}")
+
 
 if __name__ == "__main__":
     root = tk.Tk()
