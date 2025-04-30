@@ -66,6 +66,20 @@ class quiz_app:
         for opt in ['a', 'b', 'c', 'd']:
             self.option_buttons[opt].config(text=f"{opt.upper()}. {q['choices'][opt]}")
 
+    def check_answer(self):
+        selected = self.selected_option.get()
+        if not selected:
+            messagebox.showwarning("No Selection", "Please choose an answer to proceed.")
+            return
+
+        correct = self.questions[self.current_index]['correct_answer']
+        if selected == correct:
+            self.score += 1
+
+        self.current_index += 1
+        self.score_label.config(text=f"Score: {self.score}")
+        self.display_question()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
