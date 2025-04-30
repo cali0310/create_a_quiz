@@ -1,1 +1,102 @@
-[]
+[
+    {
+        "question": "The 8 rays of sun in the Philippine flag symbolizes the provinces which were declared under martial law during the Spanish regime. Which of the following is not part of the 8 provinces?",
+        "choices": {
+            "a": "Pampanga",
+            "b": "Laguna",
+            "c": "Quezon",
+            "d": "Nueva Ecija"
+        },
+        "correct_answer": "c"
+    },
+    {
+        "question": "Who is the second president of the Philippines who also died while in office? ",
+        "choices": {
+            "a": "Ramon Magsaysay",
+            "b": "Emilio Aguinaldo",
+            "c": "Manuel Quezon",
+            "d": "Sergio Osme\u00f1a"
+        },
+        "correct_answer": "c"
+    },
+    {
+        "question": "Who composed the national anthem of the Philippines \u201cLupang Hinirang\u201d? ",
+        "choices": {
+            "a": "Julian Felipe",
+            "b": "Levi Celerio",
+            "c": "Antonio Molina",
+            "d": "Jose Palma"
+        },
+        "correct_answer": "a"
+    },
+    {
+        "question": "How many chromosomes does a normal human sex cell have? ",
+        "choices": {
+            "a": "23 chromosomes",
+            "b": "34 chromosomes",
+            "c": "46 chromosomes ",
+            "d": "24 chromosomes"
+        },
+        "correct_answer": "a"
+    },
+    {
+        "question": "Which country has the most number of islands? ",
+        "choices": {
+            "a": "Japan",
+            "b": "Sweden ",
+            "c": "Finland ",
+            "d": "Philippines "
+        },
+        "correct_answer": "b"
+    },
+    {
+        "question": "What is the most abundant element on the Earth\u2019s crust? ",
+        "choices": {
+            "a": "Silicon ",
+            "b": "Aluminum ",
+            "c": "Oxygen ",
+            "d": "Iron "
+        },
+        "correct_answer": "c"
+    },
+    {
+        "question": "Who is the author of the famous novel Noli Me Tangere?",
+        "choices": {
+            "a": "Marcelo H. del Pilar",
+            "b": "Andres Bonifacio",
+            "c": "Graciano Lopez Jaena",
+            "d": "Jose Rizal"
+        },
+        "correct_answer": "d"
+    },
+    {
+        "question": "Which of the following planets is the largest in the solar system?",
+        "choices": {
+            "a": "Earth",
+            "b": "Jupiter",
+            "c": "Saturn",
+            "d": "Neptune"
+        },
+        "correct_answer": "b"
+    },
+    {
+        "question": "Who is known as the \"Father of the Katipunan\"?",
+        "choices": {
+            "a": "Andres Bonifacio",
+            "b": "Emilio Jacinto",
+            "c": "Apolinario Mabini",
+            "d": "Gregorio del Pilar"
+        },
+        "correct_answer": "a"
+    },
+    {
+        "question": "What year did the first lunar landing mission took place?",
+        "choices": {
+            "a": "1969 ",
+            "b": "1956 ",
+            "c": "1971 ",
+            "d": "1964"
+        },
+        "correct_answer": "a"
+    }
+]
