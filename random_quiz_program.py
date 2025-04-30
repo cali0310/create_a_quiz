@@ -4,18 +4,21 @@ import json
 import random
 import os
 
-# creating main window
-root = tk.Tk()
-root.title("GUI TESTING")
-root.geometry("300x200")  # Width x Height
+def load_questions(file_name="quiz_questions.txt"):
+    if os.path.exists(file_name):
+        with open(file_name, "r") as file:
+            return json.load(file)
+    return []
 
-# label
-label = tk.Label(root, text="CODE TEST FOR GUI!")
-label.pack(pady=20)
+# GUI for quiz
+class quiz_app:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Quiz")
+        self.master.geometry("500x450")
+        self.master.resizable(False, False)
 
-# button
-button = tk.Button(root, text="TESTING", command=lambda: label.config(text="You clicked the button. Press X to exit"))
-button.pack()
-
-# run GUI loop
-root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = quiz_app(root)
+    root.mainloop()
