@@ -55,6 +55,11 @@ class quiz_app:
         self.exit_button = tk.Button(self.master, text="Exit", command=self.exit_quiz, font=("Helvetica", 12), fg="red")
         self.exit_button.pack(pady=5)
 
+    def display_question(self):
+        if self.current_index >= len(self.questions):
+            self.end_quiz()
+            return
+        
 
 if __name__ == "__main__":
     root = tk.Tk()
