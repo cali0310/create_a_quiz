@@ -14,7 +14,7 @@ def load_questions(file_name="quiz_questions.txt"):
 class quiz_app:
     def __init__(self, master):
         self.master = master
-        self.master.title("Quiz")
+        self.master.title("General Knowledge Quiz")
         self.master.geometry("500x450")
         self.master.resizable(False, False)
 
@@ -45,15 +45,24 @@ class quiz_app:
         self.display_question()
 
     def create_widgets(self):
-        self.score_label=tk.Label(self.master, text="Score: 0", font=("Helvetica", 12, "bold"))
+        self.title_label = tk.Label(
+            self.master, text="General Knowledge Quiz", font=("Helvectica", 20, "bold"), fg=self.text_color,
+            bg=self.bg_color
+        )   
+        self.title_label.pack(pady=(10, 5))
+        self.score_label=tk.Label(self.master, text="Score: 0", font=("Helvetica", 12, "bold"), bg=self.bg_color)
         self.score_label.pack(pady=10)
-        self.question_label = tk.Label(self.master, textvariable=self.question_var, font=("Helvetica", 14), wraplength=450)
+        self.question_label = tk.Label(self.master, textvariable=self.question_var, font=("Helvetica", 14), bg=self.bg_color, wraplength=450)
         self.question_label.pack(pady=20)
+        self.feedback_label = tk.Label(self.master, text="", font=("Helvetica", 12, "italic"),
+                               bg=self.bg_color, fg="red", wraplength=450)
+        self.feedback_label.pack(pady=(0, 10))
+        
 
         self.option_buttons = {}
         for opt in ['a', 'b', 'c', 'd']:
             rb = tk.Radiobutton(self.master, text="", variable=self.selected_option, value=opt,
-                                font=("Helvetica", 12), wraplength=450, anchor="w", justify="left")
+                                font=("Helvetica", 12), bg=self.bg_color, activeforeground=self.text_color, wraplength=450, anchor="w", justify="left")
             rb.pack(anchor="w", padx=40, pady=2)
             self.option_buttons[opt] = rb
 
@@ -81,11 +90,23 @@ class quiz_app:
             return
 
         correct = self.questions[self.current_index]['correct_answer']
+        correct_text = self.questions[self.current_index]['choices'][correct]
+
         if selected == correct:
             self.score += 1
+            self.feedback_label.config(text="Correct!", fg="green")
+        else:
+            self.feedback_label.config(text=f"The correct answer is: {correct.upper()}. {correct_text}", fg="red")
 
-        self.current_index += 1
         self.score_label.config(text=f"Score: {self.score}")
+        self.submit_button.config(state="disabled")  
+
+        self.master.after(1000, self.next_question)
+   
+    def next_question(self):
+        self.current_index += 1
+        self.feedback_label.config(text="")  # Clear feedback
+        self.submit_button.config(state="normal")
         self.display_question()
 
     def end_quiz(self):
