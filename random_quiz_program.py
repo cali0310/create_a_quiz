@@ -15,7 +15,7 @@ class quiz_app:
     def __init__(self, master):
         self.master = master
         self.master.title("General Knowledge Quiz")
-        self.master.geometry("500x450")
+        self.master.geometry("500x500")
         self.master.resizable(False, False)
 
         self.bg_color = "#F5ECD5"       # Light beige
@@ -57,7 +57,6 @@ class quiz_app:
         self.feedback_label = tk.Label(self.master, text="", font=("Helvetica", 12, "italic"),
                                bg=self.bg_color, fg="red", wraplength=450)
         self.feedback_label.pack(pady=(0, 10))
-        
 
         self.option_buttons = {}
         for opt in ['a', 'b', 'c', 'd']:
