@@ -80,6 +80,14 @@ class quiz_app:
         self.score_label.config(text=f"Score: {self.score}")
         self.display_question()
 
+    def end_quiz(self):
+        total = len(self.questions)
+        messagebox.showinfo("Quiz Completed", f"You scored {self.score} out of {total}.")
+        self.master.quit()
+
+    def exit_quiz(self):
+        if messagebox.askyesno("Exit Quiz", "Are you sure you want to exit? Your progress will be lost."):
+            self.master.quit()
 
 if __name__ == "__main__":
     root = tk.Tk()
